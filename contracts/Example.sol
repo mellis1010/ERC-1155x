@@ -23,3 +23,4 @@ contract Example is ERC1155 {
         _mint(to, supply, 1, '');
         supply++;
     }
+ }
