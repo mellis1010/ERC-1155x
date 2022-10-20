@@ -110,7 +110,6 @@ library Address {
      * - `target` must be a contract.
      * - calling `target` with `data` must not revert.
      *
-     * _Available since v3.1._
      */
     function functionCall(address target, bytes memory data) internal returns (bytes memory) {
         return functionCall(target, data, "Address: low-level call failed");
@@ -139,7 +138,6 @@ library Address {
      * - the calling contract must have an ETH balance of at least `value`.
      * - the called Solidity function must be `payable`.
      *
-     * _Available since v3.1._
      */
     function functionCallWithValue(
         address target,
@@ -153,7 +151,6 @@ library Address {
      * @dev Same as {xref-Address-functionCallWithValue-address-bytes-uint256-}[`functionCallWithValue`], but
      * with `errorMessage` as a fallback revert reason when `target` reverts.
      *
-     * _Available since v3.1._
      */
     function functionCallWithValue(
         address target,
@@ -172,7 +169,6 @@ library Address {
      * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
      * but performing a static call.
      *
-     * _Available since v3.3._
      */
     function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {
         return functionStaticCall(target, data, "Address: low-level static call failed");
@@ -182,7 +178,6 @@ library Address {
      * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],
      * but performing a static call.
      *
-     * _Available since v3.3._
      */
     function functionStaticCall(
         address target,
@@ -199,7 +194,6 @@ library Address {
      * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
      * but performing a delegate call.
      *
-     * _Available since v3.4._
      */
     function functionDelegateCall(address target, bytes memory data) internal returns (bytes memory) {
         return functionDelegateCall(target, data, "Address: low-level delegate call failed");
@@ -209,7 +203,6 @@ library Address {
      * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],
      * but performing a delegate call.
      *
-     * _Available since v3.4._
      */
     function functionDelegateCall(
         address target,
@@ -226,7 +219,6 @@ library Address {
      * @dev Tool to verifies that a low level call was successful, and revert if it wasn't, either by bubbling the
      * revert reason using the provided one.
      *
-     * _Available since v4.3._
      */
     function verifyCallResult(
         bool success,
@@ -318,9 +310,6 @@ abstract contract ERC165 is IERC165 {
 pragma solidity ^0.8.0;
 
 
-/**
- * @dev _Available since v3.1._
- */
 interface IERC1155Receiver is IERC165 {
     /**
      * @dev Handles the receipt of a single ERC1155 token type. This function is
@@ -382,7 +371,6 @@ pragma solidity ^0.8.0;
  * @dev Required interface of an ERC1155 compliant contract, as defined in the
  * https://eips.ethereum.org/EIPS/eip-1155[EIP].
  *
- * _Available since v3.1._
  */
 interface IERC1155 is IERC165 {
     /**
@@ -509,7 +497,6 @@ pragma solidity ^0.8.0;
  * @dev Interface of the optional ERC1155MetadataExtension interface, as defined
  * in the https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions[EIP].
  *
- * _Available since v3.1._
  */
 interface IERC1155MetadataURI is IERC1155 {
     /**
@@ -526,9 +513,6 @@ interface IERC1155MetadataURI is IERC1155 {
 
 
 pragma solidity ^0.8.0;
-
-
-
 
 
 
@@ -569,7 +553,7 @@ contract ERC1155 is Context, ERC165, IERC1155, IERC1155MetadataURI {
      *
      * This implementation returns the same URI for *all* token types. It relies
      * on the token type ID substitution mechanism
-     * https://eips.ethereum.org/EIPS/eip-1155#metadata[defined in the EIP].
+     * https://eips.ethereum.org/EIPS/eip-1155#metadata[defined in the EIP.]
      *
      * Clients calling this function must replace the `\{id\}` substring with the
      * actual token type ID.
@@ -823,7 +807,7 @@ contract ERC1155 is Context, ERC165, IERC1155, IERC1155MetadataURI {
      *
      * - `to` cannot be the zero address.
      * - `id` must be less than MAX_SUPPLY;
-     * This does not implement smart contract checks according to ERC1155 so it exists as a separate function
+     * This does NOT implement smart contract checks according to ERC1155 so it exists as a separate function
      */
 
     function _mintSingle(address to, uint256 id) internal virtual {
@@ -831,7 +815,7 @@ contract ERC1155 is Context, ERC165, IERC1155, IERC1155MetadataURI {
         require(_owners[id] == address(0), "ERC1155x: supply exceeded");
         require(id < MAX_SUPPLY, "ERC1155x: invalid id"); // you can remove this if the check is done outside
 
-        _owners[id] = to; // this can be made more efficient with assembly if you know what you are doing!
+        _owners[id] = to; 
         emit TransferSingle(to, address(0), to, id, 1);
     }
 
