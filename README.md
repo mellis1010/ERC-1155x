@@ -1,5 +1,5 @@
 # ERC-1155X
-An implementation of ERC1155x, a highly optimized smart contract with potentially the lowest gas cost for deployment and secondary transfers. This is a totally NON-fungible implementation of ERC1155 and therefore this contract DOES NOT support tokens with a supply that is greater than 1.
+An implementation of ERC1155x, a highly optimized smart contract with low gas cost for deployment and secondary transfers. This is a totally NON-fungible implementation of ERC1155 and therefore this contract DOES NOT support tokens with a supply that is greater than 1.
 
 To use the ERC1155x contract in your project, copy contracts/ERC1155x to your project's contract directory and then you can import ERC1155x and write an implementation that extends the contract as is ERC1155.
 
