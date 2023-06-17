@@ -11,6 +11,7 @@ If you really want to get crazy and claim you are using the most gas optimized N
 
 For all you Chads:
 
+```
 pragma solidity 0.8.13;
 
 contract ExampleMint {
@@ -39,6 +40,7 @@ contract ExampleMint {
     }
 }
 
+```
 
 
 
